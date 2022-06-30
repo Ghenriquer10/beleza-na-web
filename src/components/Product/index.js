@@ -1,13 +1,16 @@
 import React from 'react';
 import * as C from './style';
-import cell from '../../assets/cell.png'
 
-export const Produto = () => {
+export const Produto = (props) => {
     return(
         <C.Container>
-            <img src={cell} alt="cell"/>
-            <p>Smartphone Moto G8 Power, Preto, 64GB, Tela 6.4, Câm. 16MP</p>
-            <p>R$ 1700,00</p>
+            <div className='image'>
+                <img src={props.image} alt="cell"/>
+            </div>
+            <div className='about'>
+                <p className='name'>{props.name}</p>
+                <p className='price'>R$ {props.price}</p>
+            </div>
         </C.Container>
     )
 }

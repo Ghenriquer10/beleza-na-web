@@ -8,6 +8,10 @@ export const Container = styled.section`
     justify-content: center;
     flex-direction: column;
 
+    @media (min-width: 320px) and (max-width: 480px) {
+        padding: 0;
+    }
+
     div.datas{
         display: flex;
         flex-direction: column;
@@ -44,11 +48,12 @@ export const Container = styled.section`
         align-items: center;
         justify-content: center;
         font-weight: bold;
+        font-size: 1.2em;
     }
 
     button:hover{
         transition: 1s all;
-        background-color: #EFE9E4;
-        color: #FF6C00;
+        background-color: #D45A00;
+        color: #FFFFFF;
     }
 `;
