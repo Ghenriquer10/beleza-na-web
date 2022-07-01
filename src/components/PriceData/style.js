@@ -36,7 +36,7 @@ export const Container = styled.section`
         font-weight: bold;
     }
 
-    button{
+    .button{
         height: 50px;
         background-color: #FF6C00;
         border: none;
@@ -51,7 +51,7 @@ export const Container = styled.section`
         font-size: 1.2em;
     }
 
-    button:hover{
+    .button:hover{
         transition: 1s all;
         background-color: #D45A00;
         color: #FFFFFF;

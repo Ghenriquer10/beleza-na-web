@@ -1,5 +1,6 @@
 import React from 'react'
 import * as C from './style'
+import { Link } from 'react-router-dom'
 
 
 export const PriceData = (props) => {
@@ -23,7 +24,7 @@ export const PriceData = (props) => {
                     <p>R$ {props.totalPrice}</p>
                 </div>
             </div>
-            <button>Seguir para o pagamento</button>
+            <Link className='button' form='form-test' to={'/payment'}>Seguir para o pagamento</Link>
         </C.Container>
     )
 }
