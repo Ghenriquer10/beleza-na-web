@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const Container = styled.div`
     width: 100%;
     display: flex;
@@ -25,50 +26,82 @@ export const Container = styled.div`
     }
 `;
 
-export const Content = styled.div`
+export const Content = styled.form`
     display: flex;
     width: 90%;
     height: 100%;
+    
     @media (min-width: 320px) and (max-width: 480px) {
         flex-direction: column;
         width: 100%;
         padding: 10px;
+    }    
+    `;
+
+export const CardData = styled.div`
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 10px;
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        width: 100%;
+        font-size: 0.7em;
     }
 
-    .products-div{
-        width: 70%;
+    div{
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    div.card-number, div.card-owner, div.card-data, div.card-password{
         display: flex;
-        align-items: center;
-        justify-content: center;
         flex-direction: column;
-        background-color: #ffffff;
-
-        @media (min-width: 320px) and (max-width: 480px) {
-            width: 100%;
-            font-size: 0.7em;
-        }
-    }
+    } 
     
-    .data-product{
-        width: 30%;
-        @media (min-width: 320px) and (max-width: 480px) {
-            width: 100%;
-        }
+    div.card-about{
+        display: flex;
+        flex-direction: row;
     }
 
-    
+    div.card-date{
+        margin-right: 10px;
+    }
+
+    div.card-password{
+        margin-left: 10px;
+    }
+
+    label{
+        color: #D9D9D9;
+    }
+
+    input{
+        width: 100%;
+        height: 50px;
+        border: 1px solid #D9D9D9;
+        margin-top: 5px;
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+
+
 `;
 
 export const PriceData = styled.section`
-    width: 100%;
+    width: 30%;
     height: 100%;
-    padding: 20px;
     display: flex;
     justify-content: center;
     flex-direction: column;
 
     @media (min-width: 320px) and (max-width: 480px) {
         padding: 0;
+        width: 100%;
     }
 
     div.datas{
@@ -95,7 +128,15 @@ export const PriceData = styled.section`
         font-weight: bold;
     }
 
-    .button{
+    input{
+        width: 70px;
+        border: none;
+        background-color: #EEEEEE;
+        text-align: right;
+        font-size: 1.1em;
+    }
+
+    button{
         height: 50px;
         background-color: #FF6C00;
         border: none;
@@ -110,7 +151,7 @@ export const PriceData = styled.section`
         font-size: 1.2em;
     }
 
-    .button:hover{
+    button:hover{
         transition: 1s all;
         background-color: #D45A00;
         color: #FFFFFF;
