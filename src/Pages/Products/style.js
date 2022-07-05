@@ -29,6 +29,7 @@ export const Content = styled.div`
     display: flex;
     width: 90%;
     height: 100%;
+
     @media (min-width: 320px) and (max-width: 480px) {
         flex-direction: column;
         width: 100%;
