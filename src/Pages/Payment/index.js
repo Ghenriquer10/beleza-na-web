@@ -1,33 +1,40 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import apiData from '../../services/api'
 import { useForm } from 'react-hook-form'
 import ReactInputMask from 'react-input-mask'
+import { SaleContext } from '../../contexts/saleDatas'
 import * as C from './style'
-
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 export const Payment = () => {
 
     const [products, setProducts] = useState()
     const [loading, setLoading] = useState(true)
-
     const { register, handleSubmit } = useForm()
-    const { saleData, setSaleData } = useState()
 
+    const {setSale} = useContext(SaleContext)
+    const navigate = useNavigate()
 
     useEffect(() => {
         apiData.get()
         .then((response) => {
             setProducts(response.data)
+            console.log(response.data)
             setLoading(false)
         })
     }, [])
-
     
     const onSubmit = (data) => {
-        data["foto"] = products.items
-        setSaleData(data)
+        data["products"] = products.items
+        setSale(data)
+        console.log(data)
+        toast.success('Compra realizada com sucesso!')
+        setTimeout(() => {
+            return navigate("/confirmation")
+        }, 2000)
     }
-
+ 
     return(
         <C.Container>
             <C.Content onSubmit={handleSubmit(onSubmit)}>
