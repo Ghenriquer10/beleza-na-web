@@ -46,7 +46,7 @@ export const Confirmation = () => {
                             </div>
                             <div className='card-area'>
                                 <div className='about'>
-                                    <input readOnly defaultValue={saleData.cardNumber.replace(saleData.cardNumber, '****.****.****.1111')} />
+                                    <input readOnly defaultValue={saleData.cardNumber.replace(saleData.cardNumber.substring(0, 14), '****.****.****')} />
                                 </div>
                                 <div className='about'>
                                     <input readOnly defaultValue={saleData.cardOwner}/>
