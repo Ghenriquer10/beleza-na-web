@@ -28,6 +28,7 @@ export const Payment = () => {
     const onSubmit = (data) => {
         data["products"] = products.items
         setSale(data)
+        localStorage.setItem('saleStorage', JSON.stringify(data))
         console.log(data)
         toast.success('Compra realizada com sucesso!')
         setTimeout(() => {
@@ -44,13 +45,13 @@ export const Payment = () => {
                         <ReactInputMask 
                         required minLength={16} 
                         mask={"9999-9999-9999-9999"}
-                        {...register("card-number")}
+                        {...register("cardNumber")}
                         />
                     </div>
                     <div className='card-owner'>
                         <label>Titular do cartão:</label>
                         <input required
-                        {...register("card-owner")}
+                        {...register("cardOwner")}
                         />
                     </div>
                     <div className='card-about'>
@@ -59,7 +60,7 @@ export const Payment = () => {
                             <ReactInputMask 
                             required 
                             mask={"99/9999"}
-                            {...register("card-date")}
+                            {...register("cardDate")}
                             />
                         </div>
                         <div className='card-password'>
@@ -68,7 +69,7 @@ export const Payment = () => {
                             required 
                             type={"password"} 
                             maxLength={3}
-                            {...register("card-password")}
+                            {...register("cardPassword")}
                             />
                         </div>
                     </div>
@@ -82,7 +83,7 @@ export const Payment = () => {
                         </div>
                         <div>
                             <p>Frete:</p>
-                            <p>R$ <input readOnly value={products.shippingTotal.toFixed(2)} {...register("shipping-total")}/></p>
+                            <p>R$ <input readOnly value={products.shippingTotal.toFixed(2)} {...register("shippingTotal")}/></p>
                         </div>
                         <div className='discount'>
                             <p>Desconto:</p>
