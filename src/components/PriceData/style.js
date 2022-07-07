@@ -8,7 +8,7 @@ export const Container = styled.section`
     justify-content: center;
     flex-direction: column;
 
-    @media (min-width: 320px) and (max-width: 480px) {
+    @media (min-width: 320px) and (max-width: 1024px) {
         padding: 0;
     }
 
@@ -48,7 +48,10 @@ export const Container = styled.section`
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        font-size: 1.2em;
+
+        @media (min-width: 320px) and (max-width: 1024px) {
+            font-size: 0.9em;
+        }
     }
 
     .button:hover{

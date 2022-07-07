@@ -33,11 +33,12 @@ export const Confirmation = () => {
 
     return(
         <C.Container>
+            {loading ? <h1 className='loading'>Carregando...</h1> : 
             <C.Message>
                 <IoIosCheckmarkCircleOutline size={60}/>
                 <h1>Compra efetuada com sucesso</h1>
-            </C.Message>
-                {loading ? <h1>Carregando...</h1> : 
+            </C.Message>}
+                {loading ? <h1 className='loading'>Carregando...</h1> : 
                     <C.Content>
                         <C.OwnerCard>
                             <div className='title'>
@@ -45,10 +46,10 @@ export const Confirmation = () => {
                             </div>
                             <div className='card-area'>
                                 <div className='about'>
-                                    <input readOnly value={saleData.cardNumber} />
+                                    <input readOnly defaultValue={saleData.cardNumber.replace(saleData.cardNumber, '****.****.****.1111')} />
                                 </div>
                                 <div className='about'>
-                                    <input readOnly value={saleData.cardOwner}/>
+                                    <input readOnly defaultValue={saleData.cardOwner}/>
                                 </div>
                                 <div className='about'>
                                     <input readOnly value={saleData.cardDate}/>
@@ -59,7 +60,7 @@ export const Confirmation = () => {
                             <div className='title'>
                                 <h1>Produtos</h1>
                             </div>
-                            {loading ? <h1>Carregado dados...</h1> :
+                            {loading ? <h1 className='loading'>Carregado dados...</h1> :
                                     <div className='product-area'>
                                         {saleData.products.map((product => {
                                             return(
@@ -77,7 +78,7 @@ export const Confirmation = () => {
                                 }
                         </C.ProductData>
                         <C.PriceData>
-                            {loading ? <h1>Carregado dados...</h1> :
+                            {loading ? <h1 className='loading'>Carregado dados...</h1> :
                             <div className='datas'>
                                 <div>
                                     <p>Produtos:</p>

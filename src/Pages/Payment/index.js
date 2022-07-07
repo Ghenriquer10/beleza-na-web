@@ -38,13 +38,14 @@ export const Payment = () => {
  
     return(
         <C.Container>
+            <h2>Pagamento</h2>
             <C.Content onSubmit={handleSubmit(onSubmit)}>
                 <C.CardData>
                     <div className='card-number'>
                         <label>Número do cartão:</label>
                         <ReactInputMask 
                         required minLength={16} 
-                        mask={"9999-9999-9999-9999"}
+                        mask={"9999.9999.9999.9999"}
                         {...register("cardNumber")}
                         />
                     </div>
@@ -75,7 +76,7 @@ export const Payment = () => {
                     </div>
                 </C.CardData>
                 <C.PriceData>
-                    {loading ? <h1>Carregado dados...</h1> :
+                    {loading ? <h1 className='loading'>Carregado dados...</h1> :
                     <div className='datas'>
                         <div>
                             <p>Produtos:</p>

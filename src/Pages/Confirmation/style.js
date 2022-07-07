@@ -8,6 +8,12 @@ export const Container = styled.div`
     justify-content: center;
     flex-direction: column;
 
+    h1.loading{
+        text-align: center;
+        font-size: 1.4em;
+        margin: 100px 0;
+    }
+
     @media (min-width: 320px) and (max-width: 1024px) {
         margin-top: 10px;
     }
@@ -51,14 +57,13 @@ export const Content = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     width: 90%;
     height: 100%;
     
     
     @media (min-width: 320px) and (max-width: 1024px) {
         flex-direction: column;
-        width: 100%;
-        padding: 10px;
     } 
     
     .title{
@@ -74,19 +79,17 @@ export const Content = styled.div`
     }
 `;
 
-
-
 export const OwnerCard = styled.div`
-    height: 100%;
-    width: 33%;
+    height: 45%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     margin: 0 5px;
 
-
     @media (min-width: 320px) and (max-width: 1024px) {
         width: 100%;
         font-size: 0.7em;
+        margin: 0;
     }
 
     .card-area{
@@ -94,16 +97,17 @@ export const OwnerCard = styled.div`
         height: 100%;
         width: 100%;
         display: flex;
-        align-items: center;
         justify-content: center;
         flex-direction: column;
+        box-shadow: 0 0 1em grey;
     }
 
     .about input{
-        border: none;
+        width: 100%;
         text-align: center;
         font-size: 1.5em;
         margin: 20px 0;
+        border: none;
         
         @media (min-width: 320px) and (max-width: 1024px) {
             margin: 5px 0;
@@ -112,13 +116,14 @@ export const OwnerCard = styled.div`
 `;
 
 export const ProductData = styled.div`
-    width: 33%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     margin: 0 5px;
 
     @media (min-width: 320px) and (max-width: 1024px) {
         width: 100%;
+        margin: 0;
         font-size: 0.7em;
     }
 
@@ -128,6 +133,8 @@ export const ProductData = styled.div`
         width: 100%;
         background-color: #FFFFFF;
         padding: 10px;
+        box-shadow: 0 0 1em grey;
+
 
     }
     
@@ -170,7 +177,7 @@ export const ProductData = styled.div`
 `;
 
 export const PriceData = styled.section`
-    width: 33%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -180,6 +187,7 @@ export const PriceData = styled.section`
     @media (min-width: 320px) and (max-width: 1024px) {
         padding: 0;
         width: 100%;
+        margin: 0;
     }
 
     div.datas{

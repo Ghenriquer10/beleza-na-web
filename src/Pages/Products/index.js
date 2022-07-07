@@ -26,7 +26,7 @@ export const Products = () => {
             <h2>Produtos</h2>
             <C.Content>
                 <div className='products-div'>
-                    {loading ? <h1>Carregando produtos</h1> : 
+                    {loading ? <h1 className='loading'>Carregando produtos</h1> : 
                      products.items.map((item) => {
                         return(
                             <Produto 
@@ -40,7 +40,7 @@ export const Products = () => {
                     }
                 </div>
                 <div className='data-product'>
-                    {loading ? <h1>Carregando valores</h1> :
+                    {loading ? <h1 className='loading'>Carregando valores</h1> :
                     <PriceData
                       subTotal={products.subTotal.toFixed(2)}  
                       shippingTotal={products.shippingTotal.toFixed(2)}
